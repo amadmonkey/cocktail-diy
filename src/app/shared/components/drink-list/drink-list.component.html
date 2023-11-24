@@ -1,0 +1,21 @@
+<section>
+  <h1 style="text-align: center" *ngIf="isPopular">Popular Drinks</h1>
+  <div class="grid grid-card">
+    <div
+      class="drink-card"
+      *ngFor="let drink of drinks; index as i; trackBy: trackByFn"
+    >
+      <a class="strip" [routerLink]="['', drink.idDrink]">
+        <app-drink [drink]="drink"></app-drink>
+        <h1>{{ drink.strDrink }}</h1>
+      </a>
+    </div>
+  </div>
+  <div class="status">
+    <span class="empty" *ngIf="drinks !== null && drinks.length === 0"
+      >No results</span
+    >
+    <app-loading *ngIf="drinks === null" />
+    <!-- <span class="loading" *ngIf="drinks === null"></span> -->
+  </div>
+</section>

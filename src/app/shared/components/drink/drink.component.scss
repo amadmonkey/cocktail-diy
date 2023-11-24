@@ -1,0 +1,133 @@
+.drink {
+  height: 200px;
+  width: 175px;
+  position: relative;
+  display: inline-block;
+  &.enhanced {
+    height: 250px;
+    width: 220px;
+    .ingredients-container {
+      .ingredients {
+        bottom: 30px;
+      }
+      .description {
+        bottom: 30px;
+      }
+    }
+  }
+  .ingredients-container {
+    display: inline-block;
+    justify-content: center;
+    .ingredients {
+      height: 80%;
+      width: 93%;
+      bottom: 23px;
+      display: flex;
+      position: absolute;
+      flex-direction: column-reverse;
+      clip-path: polygon(-2% 0, 101% 0, 86% 100%, 13% 100%);
+      left: 7px;
+      .color {
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: fill;
+        animation-duration: 0.5s;
+      }
+    }
+    .description {
+      height: 80%;
+      width: 99%;
+      display: flex;
+      flex-direction: column-reverse;
+      position: absolute;
+      bottom: 23px;
+      z-index: 2;
+      .bubble-container {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        animation: appear;
+        animation-duration: 0.5s;
+        .bubble {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          height: 100%;
+          width: 200px;
+          right: -200px;
+          box-sizing: border-box;
+          > span {
+            position: relative;
+            background-color: #fff;
+            box-shadow: 0px 2px 2px #d5d5d5;
+            border-radius: 7px;
+            padding: 5px 10px;
+            &::before {
+              content: "";
+              position: absolute;
+              display: inline-block;
+              background-color: black;
+              height: 2px;
+              width: 100px;
+              left: -100px;
+              top: 50%;
+              z-index: 0;
+              animation: max;
+              animation-duration: 0.5s;
+            }
+            &::after {
+              content: "";
+              position: absolute;
+              display: inline-block;
+              background-color: black;
+              height: 9px;
+              width: 9px;
+              left: -105px;
+              top: 52%;
+              transform: translateY(-50%);
+              z-index: 0;
+              border-radius: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+  img {
+    height: 100%;
+    position: relative;
+    z-index: 1;
+  }
+}
+
+@keyframes fill {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 40px;
+  }
+}
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes max {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100px;
+  }
+}

@@ -1,0 +1,22 @@
+<div class="drink" [ngClass]="{ enhanced: enhanced }" *ngIf="drink">
+  <div class="ingredients-container">
+    <div class="ingredients">
+      <ng-container *ngFor="let ingredient of ingredients; let i = index">
+        <div
+          class="color"
+          [ngStyle]="{ 'background-color': ingredient.color }"
+        ></div>
+      </ng-container>
+    </div>
+    <div class="description" *ngIf="enhanced">
+      <ng-container *ngFor="let ingredient of ingredients; let i = index">
+        <div class="bubble-container">
+          <span class="bubble">
+            <span>{{ ingredient.measure + " " + ingredient.name }}</span>
+          </span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <img src="../assets/shooter.svg" alt="" />
+</div>

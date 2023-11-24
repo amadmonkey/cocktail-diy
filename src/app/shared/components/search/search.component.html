@@ -1,0 +1,23 @@
+<div>
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <input
+      type="text"
+      formControlName="searchStr"
+      placeholder="Search drinks"
+      autocomplete="false"
+    />
+  </form>
+  <!-- <div class="search-results" *ngIf="true">
+    <section class="search-cocktails">
+      <ul>
+        <li>Margarita</li>
+      </ul>
+    </section>
+    <section class="search-ingredients">
+      <ul>
+        <li>gin</li>
+        <li>vodka</li>
+      </ul>
+    </section>
+  </div> -->
+</div>

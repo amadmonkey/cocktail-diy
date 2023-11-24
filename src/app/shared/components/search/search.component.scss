@@ -1,0 +1,31 @@
+:host {
+  width: 100%;
+  position: relative;
+  border-radius: 7px;
+  background-color: #fff;
+  box-shadow: 0px 2px 2px #d5d5d5;
+  &::placeholder {
+    opacity: 1;
+    color: #cfcfcf;
+  }
+  &::before {
+    content: "";
+    margin: 12px;
+    padding: 7px;
+    position: absolute;
+    display: inline-block;
+    background: url(../../../../assets/search-icon.svg) no-repeat 0 0;
+    background-size: cover;
+  }
+  input {
+    height: 100%;
+    border: none;
+    background: none;
+    width: calc(100% - 55px);
+    padding: 7px 15px 7px 40px;
+    font-size: 18px;
+  }
+  .search-results {
+    padding: 10px;
+  }
+}

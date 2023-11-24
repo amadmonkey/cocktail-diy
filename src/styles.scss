@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~normalize.css";
+@import url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap");
+
+@font-face {
+  font-family: cocktails;
+  src: url(assets/fonts/cocktails/Cocktails.ttf);
+}
+
+@font-face {
+  font-family: "Anonymous Pro", monospace;
+  src: url("https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap");
+}
+
+html,
+body {
+  background-color: #f2edde;
+  font-family: "Anonymous Pro", monospace;
+  color: #555555;
+}
+
+input,
+textarea {
+  color: #555555;
+  font-family: "Anonymous Pro", monospace;
+}
+
+a {
+  color: #d362d3;
+  text-decoration: none;
+  transition: color 0.3s ease-in-out;
+  display: contents;
+  &:hover {
+    color: #ff8aff;
+  }
+  &.strip {
+    transition: none;
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+.grid {
+  display: grid;
+}
+
+section {
+  padding: 50px 50px 20px 50px;
+}
+
+h1,
+h2 {
+  font-weight: 100;
+}
+
+button {
+  cursor: pointer;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

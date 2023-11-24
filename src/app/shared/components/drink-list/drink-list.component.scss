@@ -1,0 +1,42 @@
+.grid-card {
+  width: 100%;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  gap: 20px;
+  grid-auto-flow: row;
+  @media only screen and (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media only screen and (min-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media only screen and (min-width: 992px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.drink-card {
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.1s ease-in-out;
+  cursor: pointer;
+  h1 {
+    font-size: 1.5em;
+    font-weight: 100;
+    color: #161616;
+  }
+  &:hover {
+    transform: scale(105%);
+  }
+}
+
+.status {
+  display: flex;
+  justify-content: center;
+  span {
+    font-size: 3em;
+    margin: 50px;
+  }
+}

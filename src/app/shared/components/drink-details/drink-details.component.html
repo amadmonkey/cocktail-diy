@@ -1,0 +1,49 @@
+<div *ngIf="drink">
+  <section class="drink-container">
+    <h1>{{ drink.strDrink }}</h1>
+    <ul class="tags" *ngIf="drink.strTags">
+      <li *ngFor="let tag of drink.strTags.split(',')">{{ tag }}</li>
+    </ul>
+    <div class="drink-composition">
+      <div style="width: 450px">
+        <app-drink [drink]="drink" [enhanced]="true"></app-drink>
+      </div>
+      <div class="drink-details">
+        <div class="form-group" *ngIf="drink.strCategory">
+          <span class="label">Category</span>
+          <span class="value">{{ drink.strCategory }}</span>
+        </div>
+        <div
+          class="form-group"
+          *ngIf="drink.strAlcoholic"
+          [ngSwitch]="drink.strAlcoholic"
+        >
+          <span class="label">Alcoholic</span>
+          <span class="value" *ngSwitchCase="drink.strAlcoholic === 'Alcoholic'"
+            >Yes</span
+          >
+          <span
+            class="value"
+            *ngSwitchCase="drink.strAlcoholic === 'Non alcoholic'"
+            >No</span
+          >
+          <span class="value" *ngSwitchDefault>Optional</span>
+        </div>
+        <div class="form-group" *ngIf="drink.strGlass">
+          <span class="label">Glass</span>
+          <span class="value">{{ drink.strGlass }}</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="instructions" *ngIf="drink.strInstructions">
+    <h2>Instructions</h2>
+    <ol style="list-style-position: inside">
+      <li *ngFor="let step of drink.strInstructions.slice(0, -1)">
+        {{ step }}
+      </li>
+    </ol>
+  </section>
+</div>
+<app-loading *ngIf="!drink"></app-loading>
+<button class="back" (click)="back()">Back</button>

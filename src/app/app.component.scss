@@ -1,0 +1,19 @@
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .logo {
+    margin: 2em;
+    height: 150px;
+  }
+  .main-search {
+    width: 400px;
+    align-self: center;
+  }
+}
+
+footer {
+  bottom: 0;
+  position: relative;
+  text-align: center;
+}
